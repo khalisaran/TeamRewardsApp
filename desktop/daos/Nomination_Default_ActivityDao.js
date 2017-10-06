@@ -25,8 +25,8 @@ module.exports.create_Nomination = function(Nomination,callback) {
     	status : Nomination.status,
     	nominees : Nomination.nominees,
     	leader_reviewers : Nomination.leader_reviewers,
-    	created_by : Nomination.created_by,
-    	updated_by : Nomination.updated_by
+    	created_by : Nomination.created_by||"0",
+    	updated_by : Nomination.updated_by||"0"
     },
     type : sequelize.QueryTypes.INSERT,
     model: models.Nomination
