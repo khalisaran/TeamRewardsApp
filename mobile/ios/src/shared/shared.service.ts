@@ -2,6 +2,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class SharedService {
-    public baseUrl: string = "http://52.175.215.67/teamrewardsapp-web-10010";
+    public baseUrl: string = "http://40.86.184.91:3000";
     public loggedIn: boolean = false;
 }
