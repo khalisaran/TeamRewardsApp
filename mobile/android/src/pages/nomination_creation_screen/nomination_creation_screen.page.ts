@@ -3,12 +3,15 @@ import { NavController, LoadingController,NavParams,AlertController } from 'ioni
 import { Nomination_Default_ActivityService } from '../../shared/shared';
 import { Nominee_Default_ActivityService } from '../../shared/shared';
 import { Leader_reviewer_Default_ActivityService } from '../../shared/shared';
+import { Nav, Platform } from 'ionic-angular';
+import { HomePage} from '../home/home';
 
 
 @Component({
     templateUrl: 'nomination_creation_screen.page.html'
 })
 export class Nomination_Creation_ScreenPage{
+
     Nomination: any = {};
 
     array_Nominee: any[];
@@ -29,21 +32,31 @@ export class Nomination_Creation_ScreenPage{
 
     createNomination() {
         let loader = this.loadingController.create({
-          content: 'Getting data...'
+          content: 'Saving data...'
         });
         loader.present().then(() => {
-          this.Nomination.leader_reviewers=this.Nomination.leader_reviewers.toString();
+          console.log("------------------------- > ",this.Nomination.leader_reviewers)
+          
+          if(this.Nomination.leader_reviewers==undefined||this.Nomination.nominees==undefined){
+           loader.dismiss();
+           this.nav.push(HomePage);
+          }else{
+             this.Nomination.leader_reviewers=this.Nomination.leader_reviewers.toString();
           //this.Nomination.is_team=true;
           this.Nomination.nominees=this.Nomination.nominees.toString();
           //
           this.nomination_default_activityservice.createNomination(this.Nomination).subscribe(data => {
             console.log('data', data);
+           this.Nomination = data;
             loader.dismiss();
+            this.nav.push(HomePage);
           },
           err => {
             console.log('error', err);
             loader.dismiss();
           });
+          }
+         
         });
     }
 
