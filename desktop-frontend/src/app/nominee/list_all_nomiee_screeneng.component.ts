@@ -78,8 +78,20 @@ export class List_All_Nomiee_ScreenengComponent implements OnInit {
   }
 
   ngOnInit() {
+ this.get_all_Nominee();
   }
 
+  get_all_Nominee(){
+      this.nomineeservice.get_all_Nominee()
+          .subscribe(data => {
+            console.log("data", data);
+              this.Table_NomineesGridOptions.api.setRowData(data);
+            this.toastr.success('Success!');
+          },
+          error => {
+            this.toastr.error('Check the browser console to see more info.','Error!');
+          });
+  }
 
 
 }

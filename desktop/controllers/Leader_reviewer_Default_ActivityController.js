@@ -8,8 +8,9 @@ module.exports.create_Leader_reviewer = function(req, res) {
 }
 module.exports.update_Leader_reviewer = function(req, res) {
   var Leader_reviewer = req.body;
-  service.update_Leader_reviewer(Leader_reviewer,function (){
-    res.end();
+  service.update_Leader_reviewer(Leader_reviewer,function (leaderreviewer){
+   console.log("leaderreviewer - > ",leaderreviewer)
+    res.json(leaderreviewer);
   });
 }
 module.exports.search_Leader_reviewer_for_update = function(req, res) {

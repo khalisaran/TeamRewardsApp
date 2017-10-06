@@ -87,12 +87,16 @@
         </div>
         <div class="col-lg-1 "><label class="generated-label">LeaderReviewers</label>
         </div>
-        <div class="col-lg-2 "><md-select placeholder="Select" class="null" style="width: 100%;">
+      <!--   <div class="col-lg-2 "><md-select placeholder="Select" class="null" style="width: 100%;">
         <md-option [value]="1">Value 1</md-option>
         <md-option [value]="2">Value 2</md-option>
         <md-option [value]="3">Value 3</md-option>
         <md-option [value]="4">Value 4</md-option>
 
+        </md-select>
+        </div> -->
+         <div class="col-lg-2 "><md-select placeholder="Select" class="null" style="width: 100%;" [(ngModel)]="nomination.leader_reviewers">
+        <md-option *ngFor="let leaderreviwer of array_leader_reviwer" [value]="leaderreviwer.leader_name">{{leaderreviwer.leader_name}}</md-option>
         </md-select>
         </div>
         </div>

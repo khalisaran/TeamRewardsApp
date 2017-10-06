@@ -14,13 +14,14 @@ module.exports.update_Nomination = function(Nomination,callback) {
 module.exports.search_Nomination_for_update = function(Nomination_id,callback) {
   dao.search_Nomination_for_update(Nomination_id,function (nomination){
     var json_nomination = JSON.parse(JSON.stringify(nomination));
-    var cont = 0;
+      callback(json_nomination);
+  /*  var cont = 0;
     Nominee_service.get_Nominee_by_parent_id(json_nomination.id,function (nominee){
     	cont++;
     	json_nomination.nominee = nominee;
     	if(cont == 1*1)
     		callback(json_nomination);
-    });
+    });*/
 
   });
 }

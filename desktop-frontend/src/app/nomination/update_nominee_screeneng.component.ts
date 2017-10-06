@@ -6,6 +6,8 @@ import { NominationService } from './nomination.service';
 import { NomineeService } from '../nominee/nominee.service';
 import { INominee } from '../nominee/nominee';
 import { INomination } from './nomination';
+import { Leader_reviewerService } from '../leader_reviewer/leader_reviewer.service';
+import { ILeader_reviewer } from '../leader_reviewer/leader_reviewer';
 
 @Component({
     moduleId: module.id,
@@ -14,17 +16,20 @@ import { INomination } from './nomination';
 export class Update_Nominee_screenengComponent implements OnInit {
   private array_Nominee: INominee[];
 
+private array_leader_reviwer: ILeader_reviewer[];
+
   private nomination: INomination = {
   	id: 0,
-  	nominator: '',	nominator_los: '',	team_name: '',	project_name: '',	is_team: false,	is_individual: '',	team_desc: '',	team_notes: '',	prime_adjst: '',	sec_adjst: '',	award_total: '',	award_category: '',	behaviors: '',	is_current_audit_client: '',	one_firm_metric: '',	status: '',	list_leader_reviewer: '',	nominees: '',	leader_reviewers: '',
+  	nominator: '',	nominator_los: '',	team_name: '',	project_name: '',	is_team: false,	is_individual: '',	team_desc: '',	team_notes: '',	prime_adjst: '',	sec_adjst: '',	award_total: '',	award_category: '',	behaviors: '',	is_current_audit_client: '',	one_firm_metric: '',	status: '',	nominees: '',	leader_reviewers: '',
   	list_nominee: [{	name: '',	person_no: '',	manager: '',	email: '',	line: '',	award_type: '',	award_amount: '',	notes: '',	status: '',	dept_id: '',	region: '',	market: '',	initial_contribution_level: '',	final_contribution_level: ''
-  }]
+  }],
+  list_leader_reviewer: [{ leader_name: '',  guid: '', status: '', is_edit_request: '',  is_wording_accurate: '',  suggest_rank: '', comments: ''}]
   }
   ;
   @ViewChild('modalSFU')
    mymodalSFU: ModalComponent;
 
-  constructor(private router: Router, public toastr: ToastsManager, vcr: ViewContainerRef, private nominationservice: NominationService, private nomineeservice: NomineeService) { 
+  constructor(private router: Router, public toastr: ToastsManager, vcr: ViewContainerRef, private nominationservice: NominationService, private nomineeservice: NomineeService,private lr:Leader_reviewerService) { 
     this.toastr.setRootViewContainerRef(vcr);
   }
 
@@ -34,7 +39,11 @@ export class Update_Nominee_screenengComponent implements OnInit {
     	console.log("data", data);
     	this.array_Nominee = data;
     });
-
+ this.lr.get_all_Leader_reviewer().subscribe(data => {
+      console.log("data--- >>>>>>>> Update flow leader -- > ", data);
+      this.array_leader_reviwer = data;
+      this.nomination.list_leader_reviewer=[];
+    });
     if(!this.nomination.id)
     	this.mymodalSFU.open();
 
