@@ -17,15 +17,15 @@ export class MyApp {
     this.initializeApp();
     this.activities = [
       {
-        title: 'Nomination_Default_Activity',
+        title: 'Nomination',
         showSubMenu : false,
         pages: [
           {
-            title: 'Nomination_Creation_Screen',
+            title: 'Create Nomination',
             component: Nomination_Creation_ScreenPage
           }
         ]
-      },
+      }/*,
       {
         title: 'Nominee_Default_Activity',
         showSubMenu : false,
@@ -45,7 +45,7 @@ export class MyApp {
             component: Screen_76150Page
           }
         ]
-      }
+      }*/
     ];
   }
 

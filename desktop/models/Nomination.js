@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
     nominator_los: DataTypes.STRING,
     team_name: DataTypes.STRING,
     project_name: DataTypes.STRING,
-    is_team: DataTypes.STRING(1),
+    is_team: DataTypes.STRING,
     is_individual: DataTypes.STRING,
     team_desc: DataTypes.STRING,
     team_notes: DataTypes.STRING,

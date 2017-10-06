@@ -176,28 +176,23 @@ Nominees
 </label>
 </ion-item>
 
+
 <ion-item>
-<ion-select>
-<ion-option value="1">Test 1</ion-option>
-<ion-option value="2">Test 2</ion-option>
-<ion-option value="3">Test 3</ion-option>
-<ion-option value="4">Test 4</ion-option>
-</ion-select>
+          <ion-select  [(ngModel)]="Nomination.nominees" multiple="true">
+          <ion-option *ngFor="let nominee of array_Nominee" value="{{nominee.name}}">{{nominee.name}}</ion-option>
+          </ion-select>
 </ion-item>
 
 <ion-item>
 <label>
 Leader_Rewiers
 </label>
-</ion-item>
+</ion-item> 
 
 <ion-item>
-<ion-select>
-<ion-option value="1">Test 1</ion-option>
-<ion-option value="2">Test 2</ion-option>
-<ion-option value="3">Test 3</ion-option>
-<ion-option value="4">Test 4</ion-option>
-</ion-select>
+          <ion-select  [(ngModel)]="Nomination.leader_reviewers" multiple="true">
+          <ion-option *ngFor="let leader of array_Leader_reviewer" value="{{leader.leader_name}}">{{leader.leader_name}}</ion-option>
+          </ion-select>
 </ion-item>
 
 <button ion-button full (click)="createNomination()">
