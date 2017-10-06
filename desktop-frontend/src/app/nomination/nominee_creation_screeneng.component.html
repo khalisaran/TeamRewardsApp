@@ -1,0 +1,107 @@
+<section>
+    <div class="container">
+        <div class="row" style="padding-top: 22px">
+        <div class="col-lg-6 col-lg-offset-2"><label class="generated-label">Nominee Creation Screen</label>
+        </div>
+        </div>
+        <div class="row" style="padding-top: 42px">
+        <div class="col-lg-1 "><label class="generated-label">Nominator</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.nominator"></md-input-container>
+        </div>
+        <div class="col-lg-1 "><label class="generated-label">Nominator_los</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.nominator_los"></md-input-container>
+        </div>
+        <div class="col-lg-1 "><label class="generated-label">Team_Name</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.team_name"></md-input-container>
+        </div>
+        </div>
+        <div class="row" style="padding-top: 43px">
+        <div class="col-lg-1 "><label class="generated-label">Project_Name</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.project_name"></md-input-container>
+        </div>
+        <div class="col-lg-1 "><label class="generated-label">ls_team</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.is_team"></md-input-container>
+        </div>
+        <div class="col-lg-1 "><label class="generated-label">Is_individual</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.is_individual"></md-input-container>
+        </div>
+        </div>
+        <div class="row" style="padding-top: 34px">
+        <div class="col-lg-1 "><label class="generated-label">Team_desc</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.team_desc"></md-input-container>
+        </div>
+        <div class="col-lg-1 "><label class="generated-label">Team_Notes</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.team_notes"></md-input-container>
+        </div>
+        <div class="col-lg-1 "><label class="generated-label">Prime_adjst</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.prime_adjst"></md-input-container>
+        </div>
+        </div>
+        <div class="row" style="padding-top: 48px">
+        <div class="col-lg-1 "><label class="generated-label">Sec_adjst</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.sec_adjst"></md-input-container>
+        </div>
+        <div class="col-lg-1 "><label class="generated-label">Award_total</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.award_total"></md-input-container>
+        </div>
+        <div class="col-lg-1 "><label class="generated-label">Award_category</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.award_category"></md-input-container>
+        </div>
+        </div>
+        <div class="row" style="padding-top: 46px">
+        <div class="col-lg-1 "><label class="generated-label">Behaviors</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.behaviors"></md-input-container>
+        </div>
+        <div class="col-lg-1 "><label class="generated-label">Is_current_audit_client</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.is_current_audit_client"></md-input-container>
+        </div>
+        <div class="col-lg-1 "><label class="generated-label">One_firm_metrics</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.one_firm_metric"></md-input-container>
+        </div>
+        </div>
+        <div class="row" style="padding-top: 31px">
+        <div class="col-lg-1 "><label class="generated-label">Status</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="nomination.status"></md-input-container>
+        </div>
+        <div class="col-lg-1 "><label class="generated-label">Nominees</label>
+        </div>
+        <div class="col-lg-2 "><md-select placeholder="Select" class="null" style="width: 100%;" [(ngModel)]="nomination.nominees">
+        <md-option *ngFor="let nominee of array_Nominee" [value]="nominee.name">{{nominee.name}}</md-option>
+        </md-select>
+        </div>
+        <div class="col-lg-1 "><label class="generated-label">LeaderReviewers</label>
+        </div>
+        <div class="col-lg-2 "><md-select placeholder="Select" class="null" style="width: 100%;">
+        <md-option [value]="1">Value 1</md-option>
+        <md-option [value]="2">Value 2</md-option>
+        <md-option [value]="3">Value 3</md-option>
+        <md-option [value]="4">Value 4</md-option>
+
+        </md-select>
+        </div>
+        </div>
+        <div class="row" style="padding-top: 31px">
+        <div class="col-lg-3 col-lg-offset-2"><button class="btn btn-primary" (click)="create_Nomination()" style="width: 100%;">save</button>
+        </div>
+        <div class="col-lg-3 col-lg-offset-1"><a routerLink="/home"><button class="btn btn-primary" style="width: 100%;">cancel</button></a>
+        </div>
+        </div>
+
+    </div>
+</section>

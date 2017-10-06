@@ -1,0 +1,51 @@
+<nav class="navbar navbar-inverse">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>                        
+    </button>
+    <a class="navbar-brand" [routerLink]="['/']">GEPPETTO</a>
+  </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active"><a [routerLink]="['/home']">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nomination_Default_Activity<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a [routerLink]="['Nominee_Creation_Screeneng']">Screen_74850-eng</a></li>
+
+
+          <li><a [routerLink]="['Update_Nominee_screeneng']">Update_Nominee_screen</a></li>
+
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nominee_Default_Activity<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a [routerLink]="['Create_Nominee_screeneng']">Create_Nominee_screen</a></li>
+
+
+          <li><a [routerLink]="['Update_Nominee_Screeneng']">Update_Nominee_Screen</a></li>
+
+
+          <li><a [routerLink]="['List_All_Nomiee_Screeneng']">List_All_Nomiee_Screen</a></li>
+
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Leader_reviewer_Default_Activity<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a [routerLink]="['Create_Leader_Reviewer_Screeneng']">Create_Leader_Reviewer_Screen</a></li>
+
+
+          <li><a [routerLink]="['Update_Leader_Reviewer_Screeneng']">Update_Leader_Reviewer_Screen</a></li>
+
+
+          <li><a [routerLink]="['GetAll_Leader_Reviewer_Screeneng']">GetAll_Leader_Reviewer_Screen</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

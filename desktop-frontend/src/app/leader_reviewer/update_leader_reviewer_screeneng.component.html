@@ -1,0 +1,65 @@
+<section>
+    <div class="container">
+        <div class="row" style="padding-top: 41px">
+        <div class="col-lg-3 col-lg-offset-5"><label class="generated-label">Update Leader Reviewer Screen</label>
+        </div>
+        </div>
+        <div class="row" style="padding-top: 33px">
+        <div class="col-lg-1 col-lg-offset-1"><label class="generated-label">{{leader_reviewer.leader_name}}</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="leader_reviewer.leader_name"></md-input-container>
+        </div>
+        <div class="col-lg-1 col-lg-offset-1"><label class="generated-label">Guid</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="leader_reviewer.guid"></md-input-container>
+        </div>
+        </div>
+        <div class="row" style="padding-top: 95px">
+        <div class="col-lg-1 col-lg-offset-1"><label class="generated-label">Status</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="leader_reviewer.status"></md-input-container>
+        </div>
+        <div class="col-lg-2 "><label class="generated-label">Is_Edit_Request</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="leader_reviewer.is_edit_request"></md-input-container>
+        </div>
+        </div>
+        <div class="row" style="padding-top: 78px">
+        <div class="col-lg-2 col-lg-offset-1"><label class="generated-label">{{leader_reviewer.is_wording_accurate}}</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="leader_reviewer.is_wording_accurate"></md-input-container>
+        </div>
+        <div class="col-lg-2 "><label class="generated-label">Suggest_Rank</label>
+        </div>
+        <div class="col-lg-2 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="leader_reviewer.suggest_rank"></md-input-container>
+        </div>
+        </div>
+        <div class="row" style="padding-top: 100px">
+        <div class="col-lg-1 col-lg-offset-4"><label class="generated-label">Comments</label>
+        </div>
+        <div class="col-lg-3 "><md-input-container class="" style="width: 100%;"><input mdInput placeholder="Input" [(ngModel)]="leader_reviewer.comments"></md-input-container>
+        </div>
+        </div>
+        <div class="row" style="padding-top: 61px">
+        <div class="col-lg-1 col-lg-offset-4"><button class="btn btn-primary" (click)="update_Leader_reviewer()" style="width: 100%;">Update</button>
+        </div>
+        <div class="col-lg-1 "><a routerLink="/home"><button class="btn btn-primary" style="width: 100%;">Cancel</button></a>
+        </div>
+        <div class="col-lg-1 "><button class="btn btn-primary" (click)="delete_Leader_reviewer()" style="width: 100%;">Delete</button>
+        </div>
+        </div>
+
+    </div>
+</section>
+<modal #modalSFU>
+	<modal-header [show-close]="true">
+		<h4 class="modal-title">ID required!</h4>
+	</modal-header>
+	<modal-body>
+		<md-input-container><input mdInput placeholder="Leader_reviewer ID" [(ngModel)]="leader_reviewer.id"></md-input-container>
+	</modal-body>
+	<modal-footer>
+		<button type="button" class="btn btn-default" data-dismiss="modal" (click)="modalSFU.dismiss()">Cancel</button>
+		<button type="button" class="btn btn-primary" (click)="search_for_update_Leader_reviewer()">Get Leader_reviewer</button>
+	</modal-footer>
+</modal>

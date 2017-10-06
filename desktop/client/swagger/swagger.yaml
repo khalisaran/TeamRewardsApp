@@ -1,0 +1,327 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: TeamRewardsApp
+host: 52.175.215.67:9090
+basePath: /TeamRewardsApp_10010
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /Nomination_Default_Activity/Nomination:
+    put:
+      description: Update Nomination
+      parameters:
+        - name: nomination
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/Nomination'
+      responses:
+        "200":
+          description: Success
+    get:
+      description: Get all Nomination
+      responses:
+        "200":
+          description: Success
+    post:
+      description: Create Nomination
+      parameters:
+        - name: nomination
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/Nomination'
+      responses:
+        "201":
+          description: Success
+  /Nomination_Default_Activity/Nomination/{NominationId}:
+    delete:
+      description: Delete Nomination
+      parameters:
+        - name: NominationId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "204":
+          description: Success
+    get:
+      description: Get Nomination by id
+      parameters:
+        - name: NominationId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "200":
+          description: Success
+  /Nominee_Default_Activity/Nominee:
+    put:
+      description: Update Nominee
+      parameters:
+        - name: nominee
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/Nominee'
+      responses:
+        "200":
+          description: Success
+    get:
+      description: Get all Nominee
+      responses:
+        "200":
+          description: Success
+    post:
+      description: Create Nominee
+      parameters:
+        - name: nominee
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/Nominee'
+      responses:
+        "201":
+          description: Success
+  /Nominee_Default_Activity/Nominee/{NomineeId}:
+    delete:
+      description: Delete Nominee
+      parameters:
+        - name: NomineeId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "204":
+          description: Success
+    get:
+      description: Get Nominee by id
+      parameters:
+        - name: NomineeId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "200":
+          description: Success
+  /Leader_reviewer_Default_Activity/Leader_reviewer:
+    put:
+      description: Update Leader_reviewer
+      parameters:
+        - name: leader_reviewer
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/Leader_reviewer'
+      responses:
+        "200":
+          description: Success
+    get:
+      description: Get all Leader_reviewer
+      responses:
+        "200":
+          description: Success
+    post:
+      description: Create Leader_reviewer
+      parameters:
+        - name: leader_reviewer
+          in: body
+          description: json object
+          required: true
+          type: string
+          schema:
+            $ref: '#/definitions/Leader_reviewer'
+      responses:
+        "201":
+          description: Success
+  /Leader_reviewer_Default_Activity/Leader_reviewer/{Leader_reviewerId}:
+    delete:
+      description: Delete Leader_reviewer
+      parameters:
+        - name: Leader_reviewerId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "204":
+          description: Success
+    get:
+      description: Get Leader_reviewer by id
+      parameters:
+        - name: Leader_reviewerId
+          in: path
+          description: id
+          required: true
+          type: integer
+
+      responses:
+        "200":
+          description: Success
+
+definitions:
+  Nomination:
+    required:
+      - nominator
+      - nominator_los
+      - team_name
+      - project_name
+      - is_team
+      - is_individual
+      - team_desc
+      - team_notes
+      - prime_adjst
+      - sec_adjst
+      - award_total
+      - award_category
+      - behaviors
+      - is_current_audit_client
+      - one_firm_metric
+      - status
+      - list_nominee
+      - list_leader_reviewer
+      - nominees
+      - leader_reviewers
+
+    properties:
+      id:
+        type: integer
+      nominator:
+        type: string
+      nominator_los:
+        type: string
+      team_name:
+        type: string
+      project_name:
+        type: string
+      is_team:
+        type: 
+      is_individual:
+        type: string
+      team_desc:
+        type: string
+      team_notes:
+        type: string
+      prime_adjst:
+        type: string
+      sec_adjst:
+        type: string
+      award_total:
+        type: string
+      award_category:
+        type: string
+      behaviors:
+        type: string
+      is_current_audit_client:
+        type: string
+      one_firm_metric:
+        type: string
+      status:
+        type: string
+      list_nominee:
+        type: 
+      list_leader_reviewer:
+        type: string
+      nominees:
+        type: string
+      leader_reviewers:
+        type: string
+  Nominee:
+    required:
+      - name
+      - person_no
+      - manager
+      - email
+      - line
+      - award_type
+      - award_amount
+      - notes
+      - status
+      - dept_id
+      - region
+      - market
+      - initial_contribution_level
+      - final_contribution_level
+
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      person_no:
+        type: string
+      manager:
+        type: string
+      email:
+        type: string
+      line:
+        type: string
+      award_type:
+        type: string
+      award_amount:
+        type: string
+      notes:
+        type: string
+      status:
+        type: string
+      dept_id:
+        type: string
+      region:
+        type: string
+      market:
+        type: string
+      initial_contribution_level:
+        type: string
+      final_contribution_level:
+        type: string
+  Leader_reviewer:
+    required:
+      - leader_name
+      - guid
+      - status
+      - is_edit_request
+      - is_wording_accurate
+      - suggest_rank
+      - comments
+
+    properties:
+      id:
+        type: integer
+      leader_name:
+        type: string
+      guid:
+        type: string
+      status:
+        type: string
+      is_edit_request:
+        type: string
+      is_wording_accurate:
+        type: string
+      suggest_rank:
+        type: string
+      comments:
+        type: string
