@@ -47,7 +47,7 @@ export class Nomination_Creation_ScreenPage{
           //
           this.nomination_default_activityservice.createNomination(this.Nomination).subscribe(data => {
             console.log('data', data);
-          //  this.Nomination = data;
+           this.Nomination = data;
             loader.dismiss();
             this.nav.push(HomePage);
           },
