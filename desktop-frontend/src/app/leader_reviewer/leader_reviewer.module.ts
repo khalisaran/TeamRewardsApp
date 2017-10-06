@@ -6,7 +6,7 @@ import { Create_Leader_Reviewer_ScreenengComponent } from './create_leader_revie
 import { Update_Leader_Reviewer_ScreenengComponent } from './update_leader_reviewer_screeneng.component';
 import { GetAll_Leader_Reviewer_ScreenengComponent } from './getall_leader_reviewer_screeneng.component';
 import { FormsModule } from '@angular/forms';
-import { MdInputModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
 import { AgGridModule } from 'ag-grid-angular/main';
 import { Leader_reviewerService } from './leader_reviewer.service';
 
@@ -18,7 +18,7 @@ import { Leader_reviewerService } from './leader_reviewer.service';
     ],
     imports: [
         FormsModule,
-        MdInputModule,
+        MatInputModule,
         AgGridModule.withComponents([]),
         RouterModule.forChild([
             { path: 'Create_Leader_Reviewer_Screeneng', component: Create_Leader_Reviewer_ScreenengComponent},
