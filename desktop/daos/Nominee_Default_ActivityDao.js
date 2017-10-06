@@ -20,9 +20,9 @@ module.exports.create_Nominee = function(Nominee,callback) {
     	market : Nominee.market,
     	initial_contribution_level : Nominee.initial_contribution_level,
     	final_contribution_level : Nominee.final_contribution_level,
-    	created_by : 0,
-    	updated_by : 0,
-    	Nomination_id : Nominee.Nomination_id
+    	created_by : "0",
+    	updated_by : "0",
+     	Nomination_id : Nominee.Nomination_id ||null
     },
     type : sequelize.QueryTypes.INSERT,
     model: models.Nominee
@@ -50,7 +50,7 @@ module.exports.update_Nominee = function(Nominee,callback) {
     	initial_contribution_level : Nominee.initial_contribution_level,
     	final_contribution_level : Nominee.final_contribution_level,
     	updated_by : 0,
-    	Nomination_id : Nominee.Nomination_id
+    	Nomination_id : Nominee.Nomination_id ||null
     },
     type : sequelize.QueryTypes.UPDATE,
     model: models.Nominee

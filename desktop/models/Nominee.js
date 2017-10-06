@@ -21,7 +21,13 @@ module.exports = function(sequelize, DataTypes) {
     market: DataTypes.STRING,
     initial_contribution_level: DataTypes.STRING,
     final_contribution_level: DataTypes.STRING,
-    Nomination_id: DataTypes.INTEGER
+    Nomination_id: DataTypes.INTEGER,
+    created_by:DataTypes.STRING,
+    updated_by:DataTypes.STRING,
+    /*created_date:DataTypes.DATE,
+    
+    updated_date:DataTypes.DATE
+*/
   });
   return Nominee;
 };
