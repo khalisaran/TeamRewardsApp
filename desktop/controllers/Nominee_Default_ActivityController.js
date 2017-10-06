@@ -8,8 +8,10 @@ module.exports.create_Nominee = function(req, res) {
 }
 module.exports.update_Nominee = function(req, res) {
   var Nominee = req.body;
-  service.update_Nominee(Nominee,function (){
-    res.end();
+  service.update_Nominee(Nominee,function (nominee){
+    console.log("llL - > ",nominee)
+    res.json(nominee);
+  //  res.end();
   });
 }
 module.exports.search_Nominee_for_update = function(req, res) {

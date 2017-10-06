@@ -13,8 +13,8 @@ module.exports.create_Leader_reviewer = function(Leader_reviewer,callback) {
     	is_wording_accurate : Leader_reviewer.is_wording_accurate,
     	suggest_rank : Leader_reviewer.suggest_rank,
     	comments : Leader_reviewer.comments,
-    	created_by : 0,
-    	updated_by : 0
+    	created_by : "0",
+    	updated_by : "0"
     },
     type : sequelize.QueryTypes.INSERT,
     model: models.Leader_reviewer
