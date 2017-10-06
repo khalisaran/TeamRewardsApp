@@ -62,6 +62,7 @@ export class GetAll_Leader_Reviewer_ScreenengComponent implements OnInit {
   }
 
   ngOnInit() {
+  this.get_all_Leader_reviewer();
   }
 
 
@@ -70,6 +71,7 @@ export class GetAll_Leader_Reviewer_ScreenengComponent implements OnInit {
           .subscribe(data => {
             console.log("data", data);
             this.toastr.success('Success!');
+             this.Table_75451GridOptions.api.setRowData(data);
           },
           error => {
             this.toastr.error('Check the browser console to see more info.','Error!');

@@ -17,7 +17,7 @@ export interface INomination {
     one_firm_metric: string;
     status: string;
     list_nominee: any[];
-    list_leader_reviewer: string;
+    list_leader_reviewer: any[];
     nominees: string;
     leader_reviewers: string;
 }
