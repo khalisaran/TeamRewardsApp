@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Create_Nominee_screenengComponent } from './create_nominee_screeneng.component';
 import { Update_Nominee_ScreenengComponent } from './update_nominee_screeneng.component';
 import { List_All_Nomiee_ScreenengComponent } from './list_all_nomiee_screeneng.component';
-import { MdInputModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { AgGridModule } from 'ag-grid-angular/main';
 import { NomineeService } from './nominee.service';
@@ -17,7 +17,7 @@ import { NomineeService } from './nominee.service';
         List_All_Nomiee_ScreenengComponent
     ],
     imports: [
-        MdInputModule,
+        MatInputModule,
         FormsModule,
         AgGridModule.withComponents([]),
         RouterModule.forChild([
