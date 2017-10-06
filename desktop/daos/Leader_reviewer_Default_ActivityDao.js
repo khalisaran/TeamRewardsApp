@@ -1,8 +1,12 @@
 var models = require("../models");
 var sequelize = models.sequelize;
 var PropertiesReader = require('properties-reader');
+var date = require('node-datetime');
 var sqlQuery = PropertiesReader(__dirname+'/../sql_queries/Leader_reviewer_Default_Activity_SQL.properties');
 module.exports.create_Leader_reviewer = function(Leader_reviewer,callback) {
+  let now = date.create();
+	var formatted = now.format('Y-m-d H:M:S');
+	console.log("Today----->"+formatted)
   var create_query = sqlQuery._properties.create_Leader_reviewer;
   sequelize.query(create_query, {
     replacements: {
@@ -13,8 +17,8 @@ module.exports.create_Leader_reviewer = function(Leader_reviewer,callback) {
     	is_wording_accurate : Leader_reviewer.is_wording_accurate,
     	suggest_rank : Leader_reviewer.suggest_rank,
     	comments : Leader_reviewer.comments,
-    	created_by : "0",
-    	updated_by : "0"
+    	createdAt : formatted,
+    	updatedAt : formatted
     },
     type : sequelize.QueryTypes.INSERT,
     model: models.Leader_reviewer
@@ -23,6 +27,9 @@ module.exports.create_Leader_reviewer = function(Leader_reviewer,callback) {
 	});
 }
 module.exports.update_Leader_reviewer = function(Leader_reviewer,callback) {
+  let now = date.create();
+	var formatted = now.format('Y-m-d H:M:S');
+	console.log("Today----->"+formatted)
   var update_query = sqlQuery._properties.update_Leader_reviewer;
   sequelize.query(update_query, {
     replacements: {
@@ -34,7 +41,7 @@ module.exports.update_Leader_reviewer = function(Leader_reviewer,callback) {
     	is_wording_accurate : Leader_reviewer.is_wording_accurate,
     	suggest_rank : Leader_reviewer.suggest_rank,
     	comments : Leader_reviewer.comments,
-    	updated_by : 0
+    	updated_by : formatted
     },
     type : sequelize.QueryTypes.UPDATE,
     model: models.Leader_reviewer

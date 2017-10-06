@@ -22,8 +22,16 @@ module.exports = function(sequelize, DataTypes) {
     initial_contribution_level: DataTypes.STRING,
     final_contribution_level: DataTypes.STRING,
     Nomination_id: DataTypes.INTEGER,
-    created_by:DataTypes.STRING,
-    updated_by:DataTypes.STRING,
+    createdAt:{
+      type: DataTypes.DATE,
+      defaultValue: Date.now,
+      allowNull: false
+    },
+updatedAt:{
+      type: DataTypes.DATE,
+      defaultValue: Date.now,
+      allowNull: false
+    },
     /*created_date:DataTypes.DATE,
     
     updated_date:DataTypes.DATE
