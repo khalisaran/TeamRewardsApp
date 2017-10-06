@@ -1,9 +1,13 @@
 var models = require("../models");
 var sequelize = models.sequelize;
 var PropertiesReader = require('properties-reader');
+var date = require('node-datetime');
 var sqlQuery = PropertiesReader(__dirname+'/../sql_queries/Nominee_Default_Activity_SQL.properties');
 module.exports.create_Nominee = function(Nominee,callback) {
-  var create_query = sqlQuery._properties.create_Nominee;
+	var create_query = sqlQuery._properties.create_Nominee;
+	let now = date.create();
+	var formatted = now.format('Y-m-d H:M:S');
+	console.log("Today----->"+formatted)
   sequelize.query(create_query, {
     replacements: {
     	name : Nominee.name,
@@ -20,8 +24,8 @@ module.exports.create_Nominee = function(Nominee,callback) {
     	market : Nominee.market,
     	initial_contribution_level : Nominee.initial_contribution_level,
     	final_contribution_level : Nominee.final_contribution_level,
-    	created_by : "0",
-    	updated_by : "0",
+    	createdAt : formatted,
+    	updatedAt : formatted,
      	Nomination_id : Nominee.Nomination_id ||null
     },
     type : sequelize.QueryTypes.INSERT,
@@ -31,7 +35,10 @@ module.exports.create_Nominee = function(Nominee,callback) {
 	});
 }
 module.exports.update_Nominee = function(Nominee,callback) {
-  var update_query = sqlQuery._properties.update_Nominee;
+	var update_query = sqlQuery._properties.update_Nominee;
+	let now = date.create();
+	var formatted = now.format('Y-m-d H:M:S');
+	console.log("Today----->"+formatted)
   sequelize.query(update_query, {
     replacements: {
     	id : Nominee.id,
@@ -49,7 +56,7 @@ module.exports.update_Nominee = function(Nominee,callback) {
     	market : Nominee.market,
     	initial_contribution_level : Nominee.initial_contribution_level,
     	final_contribution_level : Nominee.final_contribution_level,
-    	updated_by : 0,
+    	updated_by : formatted,
     	Nomination_id : Nominee.Nomination_id ||null
     },
     type : sequelize.QueryTypes.UPDATE,

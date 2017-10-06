@@ -1,9 +1,13 @@
 var models = require("../models");
 var sequelize = models.sequelize;
 var PropertiesReader = require('properties-reader');
+var date = require('node-datetime');
 var sqlQuery = PropertiesReader(__dirname+'/../sql_queries/Nomination_Default_Activity_SQL.properties');
 module.exports.create_Nomination = function(Nomination,callback) {
 	console.log("nomination data ----->"+JSON.stringify(Nomination))
+	let now = date.create();
+	var formatted = now.format('Y-m-d H:M:S');
+	console.log("Today----->"+formatted)
   var create_query = sqlQuery._properties.create_Nomination;
   sequelize.query(create_query, {
     replacements: {
@@ -25,8 +29,8 @@ module.exports.create_Nomination = function(Nomination,callback) {
     	status : Nomination.status,
     	nominees : Nomination.nominees,
     	leader_reviewers : Nomination.leader_reviewers,
-    	created_by : Nomination.created_by||"0",
-    	updated_by : Nomination.updated_by||"0"
+    	createdAt : formatted,
+    	updatedAt : formatted
     },
     type : sequelize.QueryTypes.INSERT,
     model: models.Nomination
@@ -35,6 +39,9 @@ module.exports.create_Nomination = function(Nomination,callback) {
 	});
 }
 module.exports.update_Nomination = function(Nomination,callback) {
+	let now = date.create();
+	var formatted = now.format('Y-m-d H:M:S');
+	console.log("Today----->"+formatted)
   var update_query = sqlQuery._properties.update_Nomination;
   sequelize.query(update_query, {
     replacements: {
@@ -56,8 +63,7 @@ module.exports.update_Nomination = function(Nomination,callback) {
     	status : Nomination.status,
     	nominees : Nomination.nominees,
     	leader_reviewers : Nomination.leader_reviewers,
-    	created_by : Nomination.created_by,
-    	updated_by : Nomination.updated_by
+    	updatedAt : formatted
     },
     type : sequelize.QueryTypes.UPDATE,
     model: models.Nomination

@@ -13,7 +13,17 @@ module.exports = function(sequelize, DataTypes) {
     is_edit_request: DataTypes.STRING,
     is_wording_accurate: DataTypes.STRING,
     suggest_rank: DataTypes.STRING,
-    comments: DataTypes.STRING
+    comments: DataTypes.STRING,
+    createdAt:{
+      type: DataTypes.DATE,
+      defaultValue: Date.now,
+      allowNull: false
+    },
+    updatedAt:{
+      type: DataTypes.DATE,
+      defaultValue: Date.now,
+      allowNull: false
+    },
   });
   return Leader_reviewer;
 };

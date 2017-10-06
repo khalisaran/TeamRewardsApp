@@ -23,8 +23,16 @@ module.exports = function(sequelize, DataTypes) {
     is_current_audit_client: DataTypes.STRING,
     one_firm_metric: DataTypes.STRING,
     status: DataTypes.STRING,
-    created_by: DataTypes.STRING,
-    updated_by: DataTypes.STRING,
+    createdAt:{
+            type: DataTypes.DATE,
+            defaultValue: Date.now,
+            allowNull: false
+          },
+    updatedAt:{
+            type: DataTypes.DATE,
+            defaultValue: Date.now,
+            allowNull: false
+          },
     // created_by:{
     //   type: 'TIMESTAMP',
     //   defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
@@ -36,7 +44,7 @@ module.exports = function(sequelize, DataTypes) {
     //   allowNull: true
     // },
     nominees:{
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       get: function(){
         return this.getDataValue('nominees').split(',')
@@ -46,7 +54,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     leader_reviewers:{
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       get: function(){
         return this.getDataValue('leader_reviewers').split(';')
