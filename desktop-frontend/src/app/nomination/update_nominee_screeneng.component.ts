@@ -52,6 +52,7 @@ private array_leader_reviwer: ILeader_reviewer[];
 
 
   update_Nomination(){
+    this.nomination.list_leader_reviewer="";
       this.nominationservice.update_Nomination(this.nomination)
           .subscribe(data => {
             console.log("data", data);
